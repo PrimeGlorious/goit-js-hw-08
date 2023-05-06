@@ -15,7 +15,6 @@ function onFormSumbit(e) {
   e.preventDefault();
 
   const elements = e.currentTarget.elements;
-  console.log('onFormSumbit  elements:', elements)
   const email = elements.email.value;
   const message = elements.message.value;
 
@@ -48,7 +47,6 @@ function onFormInput(e) {
 function populateTextarea() {
   const savedMessage = localStorage.getItem(localStorageMessageKey);
   const savedMessageObj = JSON.parse(savedMessage);
-  console.log('populateTextarea  savedMessageObj:', savedMessageObj)
   if (savedMessage) {
     EmailInputRef.value = savedMessageObj.email;
     textareaRef.value = savedMessageObj.message;
