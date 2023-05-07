@@ -9,7 +9,7 @@ populateTextarea();
 
 formRef.addEventListener('submit', onFormSumbit);
 
-formRef.addEventListener('input', throttle(onFormInput, 500));
+formRef.addEventListener('input', onFormInput);
 
 function onFormSumbit(e) {
   e.preventDefault();
@@ -34,8 +34,9 @@ function onFormSumbit(e) {
 };
 
 function onFormInput(e) {
-  const email = e.currentTarget.elements.email.value;
-  const message = e.currentTarget.elements.message.value;
+  const elements = e.currentTarget.elements;
+  const email = elements.email.value;
+  const message = elements.message.value;
   const obj = {
     email,
     message,
