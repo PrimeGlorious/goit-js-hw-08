@@ -31,10 +31,11 @@ function onFormSumbit(e) {
   console.log(formData);
 
   e.currentTarget.reset();
+  localStorage.removeItem(localStorageMessageKey);
 };
 
 function onFormInput(e) {
-  const elements = e.currentTarget.elements;
+  const elements = e.currentTarget.elements
   const email = elements.email.value;
   const message = elements.message.value;
   const obj = {
